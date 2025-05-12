@@ -1,0 +1,76 @@
+
+.kebabModal{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    border: 1px solid var(--clr-border-card);
+    border-radius: 5px;
+    overflow: hidden;
+    right: -1.5rem;
+
+    /* Animation */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 0.2s forwards;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.kebabModal-btn{
+    background-color: var(--clr-bg-card);
+    border: none;
+    color: var(--font-clr-text);
+    font-size: var(--font-default);
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.kebabModal > button {
+    border: none;
+    height: 100%;
+    cursor: pointer;
+    background-color: var(--clr-bg-card);
+    color: var(--font-clr-text);
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1.2rem;
+    font-size: var(--font-tiny-text);
+}
+
+.kebabModal > button > i {
+    font-size: var(--font-subheader);
+    color: var(--font-clr-text-secondary);
+}
+
+.kebabModal-edit, 
+.kebabModal-delete{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.kebabModal-edit > p, 
+.kebabModal-delete > p{ 
+    color: var(--font-clr-text-secondary);
+}
+
+
+.delete-post-modal-container > *{
+    left: 0;
+    top: 0;
+}

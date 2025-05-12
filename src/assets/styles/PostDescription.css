@@ -1,0 +1,19 @@
+
+.post-description{
+    height: 100%;
+    background-color: var(--clr-bg-card);
+
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5em;
+
+}
+
+.post-description > p{
+    color: var(--font-clr-text);
+    width: 60ch;
+    /* overflow-wrap:break-word; */
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}

@@ -1,0 +1,29 @@
+.post-actions{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--clr-bg-card);
+}
+
+.like-btn,
+.bookmark-btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: var(--fw-regular);
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--clr-bg-card);
+    color: var(--font-clr-text);
+    cursor: pointer;
+    font-size: var(--font-subheader);
+}
+
+.like-btn > .fa-solid{
+    color: var(--clr-secondary);
+}

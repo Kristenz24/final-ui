@@ -1,0 +1,10 @@
+.image-post{
+    width: 700px;
+    height: 100%;
+    border: 1px solid var(--clr-border-card);
+    border-radius: var(--border-radius);
+    background-color: var(--clr-bg-card);
+
+    display: flex;
+    flex-direction: column;
+}

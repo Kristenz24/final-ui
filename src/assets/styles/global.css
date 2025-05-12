@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-inter);
+}
+
+:root{
+    /* Colors */
+    --clr-bg: #0E0E11;
+    --clr-bg-card: #18181B;
+    --clr-border-card:#27272A;
+    --clr-main: #3B82F6;
+    --clr-secondary: #f63b3b;
+
+    /* Font Color */
+    --font-clr-text: #FFFFFF;
+    --font-clr-text-secondary: #83838d;
+
+
+    /* Font Sizes */
+    --font-header: 24px;
+    --font-subheader: 20px;
+    --font-default-text: 16px;
+    --font-small-text: 14px;
+    --font-tiny-text: 12px;
+
+    --border-radius: 10px;
+
+    /* Font Weights */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* Font Family */
+    --font-inter: 'Inter', sans-serif;
+
+
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}

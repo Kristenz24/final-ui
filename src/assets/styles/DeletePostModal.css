@@ -1,0 +1,74 @@
+.delete-post-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Animation */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 0.2s forwards;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.delete-post-modal-contents {
+    background-color: var(--clr-bg-card);
+    padding: 2rem;
+    color: var(--font-clr-text);
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    gap: 1rem;
+    border-radius: 10px;
+}
+
+.delete-post-modal-texts{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.delete-post-modal-texts > p {
+    color: var(--font-clr-text-secondary);
+    font-size: var(--font-small-text);
+}
+
+.delete-post-modal-buttons {
+    display: flex;
+    margin-left: auto;
+    gap: 8px;
+
+}
+
+.delete-post-modal-buttons > button {
+    width: 120px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-post-modal-buttons > button:nth-child(1) {
+    background-color: var(--clr-secondary);
+    color: var(--font-clr-text);
+}
+.delete-post-modal-buttons > button:nth-child(2) {
+    background-color: transparent;
+    color: var(--font-clr-text);
+    border: 1px solid var(--clr-border-card);
+}

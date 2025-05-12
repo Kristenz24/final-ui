@@ -1,0 +1,16 @@
+.no-post-found{
+    width: 700px;
+    height: 150px;
+    border: 1px solid var(--clr-border-card);
+    border-radius: var(--border-radius);
+    background-color: var(--clr-bg-card);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-post-found > h2 {
+    color: var(--font-clr-text);
+    font-size: var(--font-default-text);
+    font-weight: var(--fw-regular);
+}
