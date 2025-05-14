@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080/mingoy/api';
+const BASE_URL = 'https://final-api-t8sh.onrender.com';
 
 export const api = {
     // Get all posts
