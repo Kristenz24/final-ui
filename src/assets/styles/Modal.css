@@ -1,0 +1,114 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--clr-bg-card);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    margin: 0 0 20px 0;
+    color: var(--font-clr-text);
+    font-size: var(--font-subheader);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--font-clr-text);
+    font-weight: var(--fw-medium);
+}
+
+.edit-textarea,
+.edit-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--clr-border-card);
+    border-radius: var(--border-radius);
+    font-size: var(--font-small-text);
+    color: var(--font-clr-text);
+    background-color: var(--clr-bg-card);
+    transition: border-color 0.2s;
+}
+
+.edit-textarea:focus,
+.edit-input:focus {
+    outline: none;
+    border-color: var(--clr-main);
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.edit-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.modal-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-small-text);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancel-button {
+    background-color: var(--clr-bg-card);
+    color: var(--font-clr-text);
+    border: 1px solid var(--clr-border-card);
+}
+
+.cancel-button:hover {
+    background-color: var(--clr-hover);
+}
+
+.save-button {
+    background-color: var(--clr-main);
+    color: white;
+}
+
+.save-button:hover {
+    background-color: var(--clr-main-dark);
+}
+
+.save-button:disabled {
+    background-color: var(--clr-disabled);
+    cursor: not-allowed;
+}
+
+.delete-button {
+    background-color: var(--clr-secondary);
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: var(--clr-secondary-dark);
+} 

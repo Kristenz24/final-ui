@@ -1,5 +1,6 @@
-.no-post-found{
+.no-post-found {
     width: 700px;
+    margin: 1rem auto;
     height: 150px;
     border: 1px solid var(--clr-border-card);
     border-radius: var(--border-radius);
@@ -7,6 +8,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.no-post-found:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .no-post-found > h2 {

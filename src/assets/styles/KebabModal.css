@@ -1,3 +1,69 @@
+.kebab-menu {
+    position: relative;
+}
+
+.kebab-button {
+    background: none;
+    border: none;
+    color: var(--font-clr-text);
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.kebab-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--clr-bg-card);
+    border: 1px solid var(--clr-border-card);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.kebab-item {
+    display: flex;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: var(--font-clr-text);
+    transition: background-color 0.2s;
+}
+
+.kebab-item:hover {
+    background-color: var(--clr-bg-hover);
+}
+
+.kebab-item i {
+    width: 20px;
+    text-align: center;
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.kebab-item .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.kebab-item .main-text {
+    font-size: var(--font-small-text);
+}
+
+.kebab-item .subtext {
+    font-size: var(--font-tiny-text);
+    color: var(--font-clr-text-secondary);
+}
+
+.kebab-item.delete {
+    color: var(--font-clr-text);
+}
+
+.kebab-item.delete:hover {
+    background-color: var(--clr-secondary-light);
+}
 
 .kebabModal{
     display: flex;

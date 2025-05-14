@@ -1,12 +1,18 @@
 .postform{
     width: 700px;
-    height: 100%;
+    margin: 1rem auto;
     border: 1px solid var(--clr-border-card);
     border-radius: var(--border-radius);
     background-color: var(--clr-bg-card);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
 
     display: flex;
     flex-direction: column;
+}
+
+.postform:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .postform > *{

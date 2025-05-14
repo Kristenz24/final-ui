@@ -1,0 +1,116 @@
+.add-new-post-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Animation */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 0.2s forwards;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.add-new-post-modal-contents {
+    background-color: var(--clr-bg-card);
+    padding: 2rem;
+    color: var(--font-clr-text);
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    gap: 1rem;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 1rem;
+}
+
+.add-new-post-modal-contents h3 {
+    color: var(--font-clr-text);
+    margin-bottom: 1rem;
+}
+
+.add-new-post-modal-contents > form > * > label {
+    display: block;
+    font-size: var(--font-tiny-text);
+    margin-bottom: .5rem;
+    color: var(--font-clr-text);
+}
+
+.add-new-post-modal-contents > form > * > input {
+    background-color: var(--clr-bg-card);
+    border: 1px solid var(--clr-border-card);
+    width: 100%;
+    height: 40px;
+    padding: 1rem;
+    color: var(--font-clr-text);
+    border-radius: var(--border-radius);
+}
+
+.add-new-post-modal-contents > form > * > input:focus {
+    outline: none;
+    border-color: var(--clr-main);
+}
+
+.error-message {
+    color: var(--clr-secondary);
+    font-size: var(--font-tiny-text);
+    margin-top: 0.5rem;
+}
+
+.add-new-post-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.add-new-post-buttons > button {
+    width: 120px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-small-text);
+    transition: all 0.2s ease-in-out;
+}
+
+.add-new-post-buttons > button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.add-new-post-buttons > button:nth-child(1) {
+    background-color: var(--clr-main);
+    color: var(--font-clr-text);
+}
+
+.add-new-post-buttons > button:nth-child(1):hover:not(:disabled) {
+    background-color: var(--clr-main-dark);
+}
+
+.add-new-post-buttons > button:nth-child(2) {
+    background-color: transparent;
+    color: var(--font-clr-text);
+    border: 1px solid var(--clr-border-card);
+}
+
+.add-new-post-buttons > button:nth-child(2):hover {
+    background-color: var(--clr-hover);
+}

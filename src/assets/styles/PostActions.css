@@ -1,29 +1,76 @@
-.post-actions{
+.post-actions {
     display: flex;
-    align-items: center;
     gap: 1rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
+    border-top: 1px solid var(--clr-border-card);
     background-color: var(--clr-bg-card);
 }
 
-.like-btn,
-.bookmark-btn{
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    font-weight: var(--fw-regular);
-    border: none;
-
+.post-action-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
     background-color: var(--clr-bg-card);
     color: var(--font-clr-text);
+    font-size: var(--font-small-text);
+    font-weight: var(--fw-regular);
     cursor: pointer;
-    font-size: var(--font-subheader);
+    transition: all 0.2s ease-in-out;
 }
 
-.like-btn > .fa-solid{
+.post-action-btn:hover {
+    background-color: var(--clr-hover);
+}
+
+.post-action-btn i {
+    font-size: var(--font-subheader);
+    transition: all 0.2s ease-in-out;
+}
+
+.like-btn {
+    color: var(--font-clr-text);
+}
+
+.like-btn i {
+    color: var(--font-clr-text);
+}
+
+.like-btn:hover {
+    background-color: var(--clr-secondary-light);
+}
+
+.like-btn.liked {
     color: var(--clr-secondary);
+}
+
+.like-btn.liked i {
+    color: var(--clr-secondary);
+}
+
+.bookmark-btn {
+    color: var(--font-clr-text);
+}
+
+.bookmark-btn i {
+    color: var(--font-clr-text);
+}
+
+.bookmark-btn:hover {
+    background-color: var(--clr-main-light);
+}
+
+.bookmark-btn:hover i {
+    color: var(--clr-primary);
+}
+
+.bookmark-btn.bookmarked {
+    color: #007bff !important; /* Blue for bookmark */
+    background-color: transparent !important; /* Ensure no background */
+}
+
+.bookmark-btn.bookmarked i {
+    color: #007bff !important; /* Blue for bookmark icon */
 }

@@ -1,0 +1,27 @@
+.add-open-post-modal{
+    position: relative;
+}
+
+.add-open-post-modal-button{
+    --width: 75px;
+    background-color: var(--clr-main);
+    color: var(--font-clr-text);
+    width: var(--width);
+    height: var(--width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--width);
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: var(--font-header);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.add-open-post-modal-button:hover {
+    transform: scale(1.05);
+}

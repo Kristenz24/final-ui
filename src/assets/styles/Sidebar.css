@@ -1,0 +1,48 @@
+.sidebar {
+    background-color: var(--clr-bg-card);
+    border-right: 1px solid var(--clr-border-card);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 2rem 1rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: none;
+    background: transparent;
+    color: var(--font-clr-text);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-nav-item:hover {
+    background-color: var(--clr-border-card);
+}
+
+.sidebar-nav-item.active {
+    background-color: var(--clr-main);
+    color: var(--font-clr-text);
+}
+
+.sidebar-nav-item i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-nav-item span {
+    font-size: var(--font-tiny-text);
+} 
