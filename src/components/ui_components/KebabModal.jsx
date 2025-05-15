@@ -2,6 +2,7 @@
 import "../../assets/styles/KebabModal.css";
 import { useState, useRef, useEffect } from "react";
 import EditModal from "./EditModal.jsx";
+import DeleteModal from "./DeleteModal.jsx";
 import { api } from "../../services/api";
 
 // Main Component
@@ -43,43 +44,22 @@ export default function KebabModal({ post, onEdit, onDelete }) {
 
     const handleEditSubmit = async (updatedPost) => {
         try {
-            const response = await fetch(`http://localhost:8080/mingoy/api/posts/${post.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    description: updatedPost.description,
-                    image: updatedPost.image
-                })
-            });
-            
-            if (!response.ok) throw new Error('Failed to update post');
-            
-            const data = await response.json();
+            const data = await api.updatePost(post.id, updatedPost);
             if (onEdit) onEdit(data);
             setShowEditModal(false);
-            window.location.reload(); // Refresh the page after successful edit
         } catch (error) {
             console.error('Error updating post:', error);
-            throw error; // Re-throw to let EditModal handle the error
+            throw error;
         }
     };
 
     const handleDeleteConfirm = async () => {
         if (isDeleting) return;
-        
         try {
             setIsDeleting(true);
-            const response = await fetch(`http://localhost:8080/mingoy/api/posts/${post.id}`, {
-                method: 'DELETE'
-            });
-            
-            if (!response.ok) throw new Error('Failed to delete post');
-            
+            await api.deletePost(post.id);
             if (onDelete) onDelete(post.id);
             setShowDeleteModal(false);
-            window.location.reload(); // Refresh the page after successful delete
         } catch (error) {
             console.error('Error deleting post:', error);
         } finally {
@@ -124,27 +104,14 @@ export default function KebabModal({ post, onEdit, onDelete }) {
             )}
 
             {showDeleteModal && (
-                <div className="modal-overlay" onClick={() => setShowDeleteModal(false)}>
-                    <div className="modal-content" onClick={e => e.stopPropagation()}>
-                        <h2>Delete Post</h2>
-                        <p>Are you sure you want to delete this post?</p>
-                        <div className="modal-actions">
-                            <button 
-                                className="modal-button cancel-button"
-                                onClick={() => setShowDeleteModal(false)}
-                            >
-                                Cancel
-                            </button>
-                            <button 
-                                className="modal-button delete-button"
-                                onClick={handleDeleteConfirm}
-                                disabled={isDeleting}
-                            >
-                                {isDeleting ? 'Deleting...' : 'Delete'}
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <DeleteModal
+                    postId={post.id}
+                    onClose={() => setShowDeleteModal(false)}
+                    onDelete={() => {
+                        setShowDeleteModal(false);
+                        if (onDelete) onDelete(post.id);
+                    }}
+                />
             )}
         </div>
     );

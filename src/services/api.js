@@ -1,4 +1,5 @@
 const BASE_URL = 'https://final-api-t8sh.onrender.com/mingoy/api';
+// const BASE_URL = 'https://localhost:8080/mingoy/api';
 
 export const api = {
     // Get all posts
@@ -98,5 +99,49 @@ export const api = {
             console.error('Error bookmarking post:', error);
             throw error;
         }
+    },
+
+    // Delete a post
+    deletePost: async (postId) => {
+        try {
+            console.log('Deleting post:', postId);
+            const response = await fetch(`${BASE_URL}/posts/${postId}`, {
+                method: 'DELETE',
+            });
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('Error response:', errorText);
+                throw new Error('Failed to delete post');
+            }
+            return true;
+        } catch (error) {
+            console.error('Error deleting post:', error);
+            throw error;
+        }
+    },
+
+    // Update (edit) a post
+    updatePost: async (postId, updatedData) => {
+        try {
+            console.log('Updating post:', postId, updatedData);
+            const response = await fetch(`${BASE_URL}/posts/${postId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedData),
+            });
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('Error response:', errorText);
+                throw new Error('Failed to update post');
+            }
+            const data = await response.json();
+            console.log('Updated post:', data);
+            return data;
+        } catch (error) {
+            console.error('Error updating post:', error);
+            throw error;
+        }
     }
-}; 
+};

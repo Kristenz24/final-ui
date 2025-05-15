@@ -65,6 +65,14 @@ export default function NewsfeedPage() {
         setPosts(prevPosts => [newPost, ...prevPosts]);
     };
 
+    const handleEdit = (updatedPost) => {
+        setPosts(prevPosts => prevPosts.map(post => post.id === updatedPost.id ? updatedPost : post));
+    };
+
+    const handleDelete = (deletedPostId) => {
+        setPosts(prevPosts => prevPosts.filter(post => post.id !== deletedPostId));
+    };
+
     if (loading) {
         return <div className="loading">Loading posts...</div>;
     }
@@ -86,6 +94,8 @@ export default function NewsfeedPage() {
                                 post={post}
                                 onLike={() => console.log('Like clicked for post:', post.id)}
                                 onBookmark={() => console.log('Bookmark clicked for post:', post.id)}
+                                onEdit={handleEdit}
+                                onDelete={handleDelete}
                             />
                         </div>
                     ))
@@ -93,4 +103,4 @@ export default function NewsfeedPage() {
             </div>
         </div>
     );
-} 
+}

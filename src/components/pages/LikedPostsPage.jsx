@@ -56,6 +56,14 @@ export default function LikedPostsPage() {
         }
     };
 
+    const handleEdit = (updatedPost) => {
+        setPosts(prevPosts => prevPosts.map(post => post.id === updatedPost.id ? updatedPost : post));
+    };
+
+    const handleDelete = (deletedPostId) => {
+        setPosts(prevPosts => prevPosts.filter(post => post.id !== deletedPostId));
+    };
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
@@ -71,12 +79,16 @@ export default function LikedPostsPage() {
                                 post={post}
                                 onLike={() => handleLike(post.id)}
                                 onBookmark={() => handleBookmark(post.id)}
+                                onEdit={handleEdit}
+                                onDelete={handleDelete}
                             />
                         ) : (
                             <Post
                                 post={post}
                                 onLike={() => handleLike(post.id)}
                                 onBookmark={() => handleBookmark(post.id)}
+                                onEdit={handleEdit}
+                                onDelete={handleDelete}
                             />
                         )}
                     </div>
@@ -84,4 +96,4 @@ export default function LikedPostsPage() {
             )}
         </div>
     );
-} 
+}
