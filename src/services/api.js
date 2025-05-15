@@ -1,4 +1,4 @@
-const BASE_URL = 'https://final-api-t8sh.onrender.com';
+const BASE_URL = 'https://final-api-t8sh.onrender.com/mingoy/api';
 
 export const api = {
     // Get all posts
